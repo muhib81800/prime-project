@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background:#111;
+}
+
+.modal {
+  width: 800px;
+  background: #fff;
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-left {
+  width: 50%;
+}
+
+.modal-right {
+  width: 50%;
+  padding: 30px;
+}
+
+.modal-header {
+  background: #e3bf9a;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #e3bf9a;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="modal">
+  <div class="modal-left">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+  </div>
+
+  <div class="modal-right">
+    <div class="modal-header">Prime Properties In Pune</div>
+
+
+	<form>
+	  Name: <input type="text" name="name"><br><br>
+	  Email: <input type="email" name="email"><br><br>
+	  Phone: <input type="text" name="phone"><br><br>
+<button onclick="submitLead()">GET CALL BACK</button>
+</form>
+  </div>
+</div>
+
+
+
+<script>
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const email = document.getElementById("number").value;
+
+  let customers = JSON.parse(localStorage.getItem("customers")) || [];
+  customers.push({ name, email, number});
+  localStorage.setItem("customers", JSON.stringify(customers));
+
+  alert("Saved");
+  e.target.reset();
+});
+</script>
+
+</body>
+</html>

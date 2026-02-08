@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Living</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #f4efe9;
+      --sand-dark: #e6dccf;
+      --gold: #b08d57;
+      --text-dark: #2c2c2c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .premium-hero {
+      height: 100vh;
+      background: url('images/lodha-bg.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .premium-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      width: 100%;
+      padding: 0 80px;
+    }
+
+    .hero-man {
+      max-height: 80vh;
+      animation: popIn 1.2s ease forwards;
+    }
+
+    .hero-headline {
+      font-size: 64px;
+      color: #d62828;
+      font-weight: 700;
+    }
+
+    .hero-project {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: #f4efe9;
+      margin: 20px 0;
+    }
+
+    .hero-contact {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1px solid #b08d57;
+      color: #fff;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, var(--sand), #ffffff);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(244, 239, 233, 0.9);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 80px;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    nav a {
+      margin-left: 32px;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: var(--text-dark);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      animation: fadeUp 1.5s ease forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #eee;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      border: 1px solid var(--gold);
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+    }
+
+    .slider {
+      height: 80vh;
+      overflow: hidden;
+      position: relative;
+      background: var(--sand);
+    }
+
+    .slider-track {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slideMove 18s infinite ease-in-out;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @keyframes slideMove {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
+    section {
+      padding: 120px 80px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      text-align: center;
+      margin-bottom: 60px;
+      color: var(--gold);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 2px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 16px;
+    }
+
+    .location {
+      background: var(--sand-dark);
+      text-align: center;
+    }
+
+    .location p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+    }
+
+    .map {
+      width: 100%;
+      height: 400px;
+      border: none;
+      filter: grayscale(100%) contrast(1.1);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .phone {
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin-top: 20px;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      background: #1c1c1c;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .gallery {
+      padding: 120px 80px;
+    }
+
+    .gallery-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 120px;
+    }
+
+    .gallery-row.reverse {
+      direction: rtl;
+    }
+
+    .gallery-row.reverse > * {
+      direction: ltr;
+    }
+
+    .gallery-image {
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 1s ease;
+    }
+
+    .gallery-image.left {
+      background-image: url('site1.jpg');
+    }
+
+    .gallery-image.right {
+      background-image: url('site2.jpg');
+    }
+
+    .gallery-text {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 1s ease 0.2s;
+    }
+
+    .gallery-row.visible .gallery-image,
+    .gallery-row.visible .gallery-text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media(max-width: 768px) {
+      .gallery-row {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-image {
+        height: 320px;
+      }
+    }
+
+    @media(max-width: 768px) {
+      header {
+        padding: 16px 24px;
+      }
+      .hero {
+        padding: 0 24px;
+      }
+      section {
+        padding: 80px 24px;
+      }
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">LUXURY LIVING</div>
+  <nav>
+    <a href="#experience">Experience</a>
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero premium-hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <img src="images/man.png" alt="Luxury Campaign" class="hero-man" />
+    </div>
+    <div class="hero-right">
+      <h1 class="hero-headline">Maa Kasam!</h1>
+      <h2 class="hero-project">LUXURY RESIDENCES</h2>
+      <p class="hero-sub">Elite Homes · Premium Living · Iconic Address</p>
+      <div class="hero-contact">📞 8180062940</div>
+    </div>
+  </div>
+</section>
+
+<section class="slider">
+  <div class="slider-track">
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=2000&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80')"></div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="gallery-row">
+    <div class="gallery-image left"></div>
+    <div class="gallery-text">
+      <h2>Architectural Excellence</h2>
+      <p>Iconic design with timeless materials, curated to elevate everyday living.</p>
+    </div>
+  </div>
+
+  <div class="gallery-row reverse">
+    <div class="gallery-image right"></div>
+    <div class="gallery-text">
+      <h2>Refined Interiors</h2>
+      <p>Thoughtfully designed spaces that balance luxury, comfort, and functionality.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="section-title">The Fine Art of Luxury Living</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Signature Interiors</h3>
+      <p>Curated spaces with premium finishes, marble floors, and bespoke detailing.</p>
+    </div>
+    <div class="card">
+      <h3>Elite Experiences</h3>
+      <p>Private lounges, curated dining, and hospitality-inspired living.</p>
+    </div>
+    <div class="card">
+      <h3>Iconic Views</h3>
+      <p>Panoramic cityscapes and serene surroundings designed to inspire.</p>
+    </div>
+  </div>
+</section>
+
+<section id="location" class="location">
+  <h2 class="section-title">Prime Location</h2>
+  <p>Strategically located with seamless connectivity to business hubs, lifestyle destinations, and major landmarks.</p>
+  <iframe class="map" src="https://www.google.com/maps?q=Mumbai&output=embed"></iframe>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Connect With Us</h2>
+  <p>For exclusive previews and private consultations, contact us directly.</p>
+  <div class="phone">📞 8180062940</div>
+  <div class="phone">📞 7058213577</div>
+</section>
+
+<footer>
+  © 2026 Luxury Living. All Rights Reserved.
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+
+  const galleryRows = document.querySelectorAll('.gallery-row');
+
+  galleryRows.forEach(row => observer.observe(row));
+</script>
+
+</body>
+</html>

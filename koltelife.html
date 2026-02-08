@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kolte Patil Life Republic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="koltesitedetails.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="project-header">
+  <h1>Kolte Patil Life Republic</h1>
+  <p>Hinjewadi, pune</p>
+</header>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <img src="/images/koltelife.jpg" class="main-img" id="mainImage">
+
+  <div class="gallery-section">
+    <img src="/images/kolte3.jpg" onclick="changeImage(this)">
+    <img src="/images/kolte4.jpg" onclick="changeImage(this)">
+    <img src="/images/kolte5.jpg" onclick="changeImage(this)">
+    <img src="/images/kolte6.png" onclick="changeImage(this)">
+	<img src="/images/kolte7.png" onclick="changeImage(this)">
+	<img src="/images/athena7.jpg" onclick="changeImage(this)">
+	
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+<!-- DETAILS -->
+<section class="details">
+
+  <div class="info">
+    <h2>Project Details</h2>
+    <ul>
+      <li><b>Configuration:</b> 1- 5 BHK</li>
+      <li><b>Carpet Area:</b> 813– 1231 sq.ft</li>
+      <li><b>Price:</b> ₹82 Lakh onwards</li>
+      <li><b>Possession:</b> Ready to Move</li>
+      <li><b>Developer:</b>  Kolte Patil Developers </li>
+	  <li><b>Floors:</b> B + G + 26 </li>
+	  <li><b>Status:</b> Under Construction </li>
+	  <li><b>Land Area:</b>The project is spread across approximately 400 acres.</li>
+
+	  <li><b>Configuration:</b>Offers 1, 2, 3, 4, 5 BHK premium flats</li>
+		
+		
+		
+    </ul>
+  </div>
+
+  <div class="amenities">
+    <h2>Amenities</h2>
+    <ul>
+      <li>Swimming Pool</li>
+      <li>Club House</li>
+      <li>Gym & Yoga Center</li>
+      <li>Children Play Area</li>
+      <li>24x7 Security</li>
+      <li>Power Backup</li>
+	  <li>Golf Court</li>
+	  <li>Terrace Garden</li>
+	  <li>Open-to-sky swimming pool, sky gazing area, and wooden trellis.</li>
+	  <li>Fully-equipped gymnasium, jogging track, and acupressure pathway.</li>
+	  <li>Multipurpose turf, kids' play area, senior citizen zone, and landscaped gardens.</li>
+	  <li>Rainwater harvesting, sewage treatment plant, and waste management systems. </li>
+    </ul>
+  </div>
+
+</section>
+
+
+
+<!-- CTA -->
+<section class="cta">
+	<div class="amenities-video-section">
+	    <h2 class="video-title">Experience the Lifestyle</h2>
+
+	    <div class="video-wrapper">
+	        <video autoplay muted loop playsinline>
+	            <source src="D:\springbootfullsetup\practice\video\videoplayback.webm" type="video/mp4">
+	            Your browser does not support the video tag.
+	        </video>
+	    </div>
+	</div>
+  <button class="pay-btn">Pay ₹5000 Token</button>
+
+  <section class="location-section">
+    <h2>Project Location</h2>
+
+    <iframe 
+      src="https://www.google.com/maps?q=Kolte%20Patil%20Life%20Republic%20Hinjewadi&output=embed">
+    </iframe>
+ 
+
+</section>
+<script>
+function initMap() {
+  const location = { lat: 18.5590, lng: 73.7890 }; // Kolte Patil 24K Altura
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: location,
+    styles: [
+      { elementType: "geometry", stylers: [{ color: "#1d2c4d" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#8ec3b9" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#1a3646" }] },
+      { featureType: "road", elementType: "geometry", stylers: [{ color: "#304a7d" }] },
+      { featureType: "water", elementType: "geometry", stylers: [{ color: "#0e1626" }] }
+    ]
+  });
+
+  new google.maps.Marker({
+    position: location,
+    map: map,
+    title: "Life Republic Kolte Patil"
+  });
+}
+</script>
+
+<script 
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+  async defer>
+</script>
+</body>
+</html>
