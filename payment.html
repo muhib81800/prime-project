@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Token Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #1c1c1c, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-lux {
+  width: 420px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+  color: #fff;
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(40px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+.payment-lux h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.project {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.amount {
+  font-size: 26px;
+  color: #d4af37;
+  margin-bottom: 25px;
+}
+
+.qr {
+  background: #fff;
+  padding: 18px;
+  border-radius: 18px;
+  width: fit-content;
+  margin: auto;
+}
+
+.qr img {
+  width: 210px;
+}
+
+.info {
+  margin-top: 25px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 18px;
+}
+
+.info p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.info span {
+  color: #d4af37;
+  font-weight: 500;
+}
+
+.trust {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="payment-lux">
+  <h1>Secure Token Payment</h1>
+  <div class="project" id="project">Godrej Project</div>
+  <div class="amount">₹ <span id="amount">5000</span></div>
+
+  <div class="qr">
+    <!-- YOUR QR IMAGE -->
+    <img src="qr.png" alt="UPI QR Code">
+  </div>
+
+  <div class="info">
+    <p>UPI ID: <span>yourupiid@upi</span></p>
+    <p>Mobile Number: <span>+91 9XXXXXXXXX</span></p>
+    <p>Purpose: <span>Booking Token</span></p>
+  </div>
+
+  <div class="trust">
+    100% Secure • Trusted Real Estate Payment
+  </div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById("project").innerText = params.get("project") || "Godrej Project";
+document.getElementById("amount").innerText = params.get("amount") || "5000";
+</script>
+
+</body>
+</html>

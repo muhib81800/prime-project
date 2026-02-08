@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Commercial Property
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="property.css">
+</head>
+<body>
+
+
+<div class="projects-section">
+  <h2 class="section-title">Top 12 Commercial Projects in Pune</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="\images\kwt.png">
+      <h3>Kohinoor World Tower</h3>
+      <p>PCMC</p>
+      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+        I'm Interested
+      </button>
+    </div>
+	<div class="project-card">
+	      <img src="\images\satta.jpg">
+	      <h3>Sattva Verve</h3>
+	      <p>Kharadi</p>
+	      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+	        I'm Interested
+	      </button>
+	    </div>
+		<div class="project-card">
+		      <img src="\images\amar.jpg">
+		      <h3>Amar Business Zone</h3>
+		      <p> Baner</p>
+		      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+		        I'm Interested
+		      </button>
+		    </div>
+			<div class="project-card">
+			      <img src="\images\platinum.jpg">
+			      <h3>Platinum 9 Business Tower</h3>
+			      <p>Wakad</p>
+			      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+			        I'm Interested
+			      </button>
+			    </div>
+
+
+				<div class="project-card">
+				      <img src="\images\suratwala.jpg">
+				      <h3>Suratwala Market Plaza</h3>
+				      <p>Hinjewadi </p>
+				      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+				        I'm Interested
+				      </button>
+				    </div>
+					<div class="project-card">
+					      <img src="\images\geras.jpg">
+					      <h3>Geras Imperium Plazo</h3>
+					      <p>Hinjewadi</p>
+					      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+					        I'm Interested
+					      </button>
+					    </div>
+						<div class="project-card">
+						      <img src="\images\veras.jpg">
+						      <h3>Vascon Tower Of Ascend</h3>
+						      <p>Kharadi</p>
+						      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+						        I'm Interested
+						      </button>
+						    </div>						  <div class="project-card">
+						        <img src="\images\nandan.jpg">
+						        <h3>Nandan Probiz</h3>
+						        <p>Baner</p>
+						        <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+						          I'm Interested
+						        </button>
+						      </div>							<div class="project-card">
+							      <img src="\images\bramha.jpg">
+							      <h3>Bramha Corp Business Park</h3>
+							      <p>Kalyani Nagar</p>
+							      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+							        I'm Interested
+							      </button>
+							    </div>							  <div class="project-card">
+							        <img src="img/project1.jpg">
+							        <h3>Mittal One Place</h3>
+							        <p>Hinjewa</p>
+							        <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+							          I'm Interested
+							        </button>
+							      </div>								<div class="project-card">
+								      <img src="img/project1.jpg">
+								      <h3>VJ Indi Works Karadi Central</h3>
+								      <p>Hinjewadi | Grade A Offices</p>
+								      <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+								        I'm Interested
+								      </button>
+								    </div>								  <div class="project-card">
+								        <img src="img/project1.jpg">
+								        <h3>Yashada Business Zone</h3>
+								        <p>Hinjewadi | Grade A Offices</p>
+								        <button class="interest-btn" onclick="openModal('Godrej Business Bay')">
+								          I'm Interested
+								        </button>
+								      </div>						
+				
+				
+				
+<div id="interestModal" class="modal">
+  <div class="modal-box">
+    <h3>Request Callback</h3>
+
+    <form id="interestForm">
+      <input type="hidden" id="projectName">
+
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Mobile Number" required>
+
+      <button type="submit">Submit Interest</button>
+    </form>
+  </div>
+</div>
+<script>
+function openModal(project) {
+  document.getElementById("projectName").value = project;
+  document.getElementById("interestModal").style.display = "flex";
+}
+
+document.getElementById("interestForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = {
+    project: document.getElementById("projectName").value,
+    name: this[1].value,
+    email: this[2].value,
+    phone: this[3].value
+  };
+
+  fetch("/interest", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(data)
+  });
+
+  alert("Thank you! Our expert will contact you.");
+  document.getElementById("interestModal").style.display = "none";
+});
+</script>
